@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('desc');
             $table->date('date');
+            $table->double('amount');
             $table->enum('type',['income','expense']);
             $table->timestamps();
         });

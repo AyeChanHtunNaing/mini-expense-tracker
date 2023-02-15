@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Money extends Model
 {
     use HasFactory;
-    protected $fillable=['desc','type','date'];
+    protected $fillable=['desc','type','date','amount'];
 }

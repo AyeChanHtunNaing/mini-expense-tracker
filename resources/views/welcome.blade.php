@@ -22,6 +22,7 @@
             <form action="/" method="post">
                 @csrf
               <input type="text" class="btn btn-dark text-white" name="desc" placeholder="Description">
+              <input type="number" class="btn btn-dark text-white" name="amount" placeholder="Amount">
               <input type="date" class="btn btn-dark text-white" value="date" name="date">
               <select name="type" class="btn btn-dark">
                 <option value="income">Income</option>
@@ -35,24 +36,22 @@
         <div class="col-6">
          
             <ul class="list-group mt-3">
+            @foreach($data as $d)
               <li class="list-group-item d-flex justify-content-between">
-                <div class="">အမေမုန့်ဖိုးပေး <br>
-                  <small class="text-muted">11-2-2023</small>
+                <div class="">{{$d->desc}} <br>
+                  <small class="text-muted">{{$d->date}}</small>
                 </div>
-                <small class="text text-success">+10000 Ks</small>
+                @if($d->type=='income')
+                <small class="text text-success">
+                   + {{$d->amount}} Ks
+                </small>
+                @else
+                <small class="text text-danger">
+                  - {{$d->amount}} Ks
+               </small>
+                @endif
               </li>
-              <li class="list-group-item d-flex justify-content-between">
-                <div class="">လစာရ <br>
-                  <small class="text-muted">12-2-2023</small>
-                </div>
-                <small class="text text-success">+20000 Ks</small>
-              </li>
-              <li class="list-group-item d-flex justify-content-between">
-                <div class="">အဆင်အမ်း <br>
-                  <small class="text-muted">13-2-2023</small>
-                </div>
-                <small class="text text-danger">-10000 Ks</small>
-              </li>
+              @endforeach
             </ul>
           
         </div>
