@@ -58,10 +58,10 @@
         <div class="col-6">
           <div class="card card-body mt-3">
             <div class="d-flex justify-content-between">
-              <h5>Chart</h5>
+              <h5>Summary for Today</h5>
               <div>
-                <small class="text-success">Income : + 20000 Ks</small>
-                <small class="text-danger ml-3">Expense : - 10000 Ks</small>
+                <small class="text-success">Income : + {{$total_income}}Ks</small>
+                <small class="text-danger ml-3">Expense : - {{$total_expense}} Ks</small>
               </div>
             </div>
             <hr class="p-0 m-0" />
